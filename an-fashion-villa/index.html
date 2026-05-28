@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AN Fashion Villa - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">AN Fashion Villa</div>
+                <ul class="nav-links">
+                    <li><a href="style.html" class="active">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to AN Fashion Villa</h1>
+            <p>Premium fashion by Abdullah Nouman</p>
+            <a href="shop.html" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- FIXED Slider -->
+    <section class="slider-section">
+        <div class="slider-container">
+            <div class="slides">
+                <div class="slide active">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&h=600&fit=crop" alt="Summer Collection">
+                    <div class="slide-overlay">
+                        <h2>Summer Collection 2026</h2>
+                        <p>Premium lawn fabrics starting from PKR 1,999</p>
+                        <a href="shop.html" class="slide-btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1200&h=600&fit=crop" alt="Stitched Suits">
+                    <div class="slide-overlay">
+                        <h2>Stitched Suits</h2>
+                        <p>Elegant designs for weddings & special occasions</p>
+                        <a href="shop.html" class="slide-btn">View Collection</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1596783437094-7b6f9d7f3d1f?w=1200&h=600&fit=crop" alt="Accessories">
+                    <div class="slide-overlay">
+                        <h2>Premium Accessories</h2>
+                        <p>Dupattas, scarves & more</p>
+                        <a href="shop.html" class="slide-btn">Explore</a>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="slider-arrow left" onclick="prevSlide()">&#10094;</button>
+            <button class="slider-arrow right" onclick="nextSlide()">&#10095;</button>
+            
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <div class="product-card" onclick="window.location='product.html?id=1'">
+                    <img src="https://images.unsplash.com/photo-1594938298603-c81488a74fcb?w=400&h=500&fit=crop" alt="Product">
+                    <h3>Unstitched Fabric</h3>
+                    <p class="price">PKR 2,499</p>
+                    <button class="btn-add" onclick="event.stopPropagation(); addToCart(1)">Add to Cart</button>
+                </div>
+                <div class="product-card" onclick="window.location='product.html?id=2'">
+                    <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&h=500&fit=crop" alt="Product">
+                    <h3>Stitched Suit</h3>
+                    <p class="price">PKR 3,999</p>
+                    <button class="btn-add" onclick="event.stopPropagation(); addToCart(2)">Add to Cart</button>
+                </div>
+                <div class="product-card" onclick="window.location='product.html?id=3'">
+                    <img src="https://images.unsplash.com/photo-1596482103537-1f98c1dc20d4?w=400&h=500&fit=crop" alt="Product">
+                    <h3>Designer Kurti</h3>
+                    <p class="price">PKR 1,799</p>
+                    <button class="btn-add" onclick="event.stopPropagation(); addToCart(3)">Add to Cart</button>
+                </div>
+                <div class="product-card" onclick="window.location='product.html?id=4'">
+                    <img src="https://images.unsplash.com/photo-1605763240004-7e93b172d754?w=400&h=500&fit=crop" alt="Product">
+                    <h3>Embroidered Dupatta</h3>
+                    <p class="price">PKR 999</p>
+                    <button class="btn-add" onclick="event.stopPropagation(); addToCart(4)">Add to Cart</button>
+                </div>
+                <div class="product-card" onclick="window.location='product.html?id=5'">
+                    <img src="https://images.unsplash.com/photo-1574693832412-4e1036b1fb2a?w=400&h=500&fit=crop" alt="Product">
+                    <h3>Premium Lawns</h3>
+                    <p class="price">PKR 2,199</p>
+                    <button class="btn-add" onclick="event.stopPropagation(); addToCart(5)">Add to Cart</button>
+                </div>
+                <div class="product-card" onclick="window.location='product.html?id=6'">
+                    <img src="https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?w=400&h=500&fit=crop" alt="Product">
+                    <h3>Winter Collection</h3>
+                    <p class="price">PKR 4,499</p>
+                    <button class="btn-add" onclick="event.stopPropagation(); addToCart(6)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature-item"><h3>🚚 Free Shipping</h3><p>Orders over PKR 5000</p></div>
+            <div class="feature-item"><h3>↩️ Easy Returns</h3><p>7 days policy</p></div>
+            <div class="feature-item"><h3>🔒 Secure Payment</h3><p>100% safe</p></div>
+            <div class="feature-item"><h3>📞 24/7 Support</h3><p>Anytime help</p></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About AN Fashion Villa</h4>
+                    <p>Premium fashion by Abdullah Nouman. Quality guaranteed.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📧 contact@anfashionvilla.com</p>
+                    <p>📞 +92 300 1234567</p>
+                    <p>📍 Sargodha, Punjab, Pakistan</p>
+                </div>
+            </div>
+            <p class="copyright">© 2026 AN Fashion Villa. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

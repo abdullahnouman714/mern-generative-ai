@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AN Fashion Villa - Shop</title>
+    <link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">AN Fashion Villa</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
+                </ul>
+                <div class="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="shop-section">
+        <div class="container">
+            <h2>All Products</h2>
+            
+            <!-- Filter Buttons (ab links ban gaye hain) -->
+            <div class="filters">
+                <a href="shop.html" class="filter-btn active">All</a>
+                <a href="shop-unstitched.html" class="filter-btn">Unstitched</a>
+                <a href="shop-stitched.html" class="filter-btn">Stitched</a>
+                <a href="shop-accessories.html" class="filter-btn">Accessories</a>
+            </div>
+            
+            <div class="product-grid" id="shop-products"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2026 AN Fashion Villa. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>
