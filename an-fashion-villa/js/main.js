@@ -1,6 +1,20 @@
 // Cart functionality
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+// Products data (LOCAL IMAGES)
+const products = [
+    { id: 1, name: 'Unstitched Fabric', price: 2499, category: 'unstitched', image: 'images/1.jpg', description: 'Premium quality unstitched fabric perfect for summer' },
+    { id: 2, name: 'Stitched Suit', price: 3999, category: 'stitched', image: 'images/2.jpg', description: 'Beautifully stitched traditional suit for special occasions' },
+    { id: 3, name: 'Designer Kurti', price: 1799, category: 'stitched', image: 'images/3.jpg', description: 'Elegant kurti for daily wear with modern design' },
+    { id: 4, name: 'Embroidered Dupatta', price: 999, category: 'accessories', image: 'images/4.jpg', description: 'Beautiful handcrafted embroidered dupatta' },
+    { id: 5, name: 'Premium Lawns', price: 2199, category: 'unstitched', image: 'images/5.jpg', description: 'Soft lawn fabric perfect for summer collection' },
+    { id: 6, name: 'Winter Collection', price: 4499, category: 'stitched', image: 'images/6.jpg', description: 'Warm winter clothing for chilly weather' },
+    { id: 7, name: 'Luxury Lawn Set', price: 3299, category: 'unstitched', image: 'images/7.jpg', description: 'Exclusive lawn set with dupatta' },
+    { id: 8, name: 'Party Wear Suit', price: 5499, category: 'stitched', image: 'images/8.jpg', description: 'Elegant party wear for special events' },
+    { id: 9, name: 'Silk Scarf', price: 1299, category: 'accessories', image: 'images/9.jpg', description: 'Premium silk scarf with unique design' },
+    { id: 10, name: 'Casual Kurti', price: 1599, category: 'stitched', image: 'images/10.jpg', description: 'Comfortable casual kurti for daily use' }
+];
+
 // Slider variables
 let slideIndex = 0;
 const slides = document.querySelectorAll('.slide');
@@ -8,25 +22,15 @@ let slideInterval;
 
 // Initialize slider if it exists
 if (slides.length > 0) {
-    // Show initial slide
     showSlide(slideIndex);
-    
-    // Auto slide every 5 seconds
     startAutoSlide();
 }
 
 function showSlide(n) {
-    // Remove active class from all slides
     slides.forEach(slide => slide.classList.remove('active'));
-    
-    // Handle loop
     if (n >= slides.length) slideIndex = 0;
     if (n < 0) slideIndex = slides.length - 1;
-    
-    // Add active class to current slide
     slides[slideIndex].classList.add('active');
-    
-    // Update dots
     updateDots();
 }
 
@@ -107,16 +111,6 @@ function addToCartFromDetail() {
         alert('✅ Added to cart!');
     }
 }
-
-// Products data
-const products = [
-    { id: 1, name: 'Unstitched Fabric', price: 2499, category: 'unstitched', image: 'https://images.unsplash.com/photo-1594938298603-c81488a74fcb?w=400&h=500&fit=crop', description: 'Premium quality unstitched fabric perfect for summer' },
-    { id: 2, name: 'Stitched Suit', price: 3999, category: 'stitched', image: 'https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&h=500&fit=crop', description: 'Beautifully stitched traditional suit for special occasions' },
-    { id: 3, name: 'Designer Kurti', price: 1799, category: 'stitched', image: 'https://images.unsplash.com/photo-1596482103537-1f98c1dc20d4?w=400&h=500&fit=crop', description: 'Elegant kurti for daily wear with modern design' },
-    { id: 4, name: 'Embroidered Dupatta', price: 999, category: 'accessories', image: 'https://images.unsplash.com/photo-1605763240004-7e93b172d754?w=400&h=500&fit=crop', description: 'Beautiful handcrafted embroidered dupatta' },
-    { id: 5, name: 'Premium Lawns', price: 2199, category: 'unstitched', image: 'https://images.unsplash.com/photo-1574693832412-4e1036b1fb2a?w=400&h=500&fit=crop', description: 'Soft lawn fabric perfect for summer collection' },
-    { id: 6, name: 'Winter Collection', price: 4499, category: 'stitched', image: 'https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?w=400&h=500&fit=crop', description: 'Warm winter clothing for chilly weather' }
-];
 
 // Mobile menu toggle
 document.querySelector('.hamburger')?.addEventListener('click', () => {

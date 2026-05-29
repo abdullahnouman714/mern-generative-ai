@@ -26,7 +26,6 @@
         <div class="container">
             <h2>All Products</h2>
             
-            <!-- Filter Buttons (ab links ban gaye hain) -->
             <div class="filters">
                 <a href="shop.html" class="filter-btn active">All</a>
                 <a href="shop-unstitched.html" class="filter-btn">Unstitched</a>
@@ -44,6 +43,17 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
-    <script src="js/shop.js"></script>
+    <script>
+        // Display all products
+        const container = document.getElementById('shop-products');
+        container.innerHTML = products.map(product => `
+            <div class="product-card" onclick="window.location='product.html?id=${product.id}'">
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p class="price">PKR ${product.price.toLocaleString()}</p>
+                <button class="btn-add" onclick="event.stopPropagation(); addToCart(${product.id})">Add to Cart</button>
+            </div>
+        `).join('');
+    </script>
 </body>
 </html>
